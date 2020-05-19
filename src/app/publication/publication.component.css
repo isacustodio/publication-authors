@@ -1,0 +1,140 @@
+.tiles article:nth-child(6n - 5):before {
+    background-color: #6fc3df;
+}
+
+.tiles article:nth-child(6n - 4):before {
+    background-color: #8d82c4;
+}
+
+.tiles article:nth-child(6n - 3):before {
+    background-color: #ec8d81;
+}
+
+.tiles article:nth-child(6n - 2):before {
+    background-color: #e7b788;
+}
+
+.tiles article:nth-child(6n - 1):before {
+    background-color: #8ea9e8;
+}
+
+.tiles article:nth-child(6n):before {
+    background-color: #87c5a4;
+}
+
+.tiles article {
+    cursor: default;
+    height: 40vh;
+    max-height: 17em;
+    min-height: 13em;
+    overflow: hidden;
+    position: relative;
+    width: 40%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tiles article:nth-child(4n - 1),
+.tiles article:nth-child(4n - 2) {
+    width: 60%;
+}
+
+.tiles article header {
+    position: relative;
+    z-index: 3;
+}
+
+.tiles article h3 {
+    font-size: 1.75em;
+}
+
+.tiles article h3 a:hover {
+    color: inherit !important;
+}
+
+.tiles article:before {
+    -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.85;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.tiles article:after {
+    background-color: rgba(36, 41, 67, 0.25);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.tiles article:hover:before {
+    opacity: 0;
+}
+
+@media screen and (max-width: 980px) {
+    .tiles article {
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .tiles article {
+        padding: 3em 1.5em 1em 1.5em;
+        height: 16em;
+        max-height: none;
+        min-height: 0;
+    }
+    .tiles article h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tiles {
+        display: block;
+    }
+    .tiles article {
+        height: 20em;
+        width: 100% !important;
+    }
+}
+
+.tiles article h3 {
+    font-size: 1.75em;
+    color: #fcfcfc;
+    font-weight: 600;
+    line-height: 1.65;
+    margin: 0 0 1em 0;
+}
+
+.tiles article h3 a {
+    color: #00001a;
+    text-decoration: none;
+}
+
+.tiles article p {
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #fcfcfc;
+}

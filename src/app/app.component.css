@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+.header-content {
+    height: 75vh;
+    min-height: 20em;
+    max-height: 40em;
+    background-color: #242943;
+}
+
+.header-content div {
+    padding: 4em 0 2em 0;
+    margin: 0 auto;
+    max-width: 65em;
+    width: calc(100% - 6em);
+    vertical-align: baseline;
+    color: #ffffff;
+}
+
+.header-content div h1 {
+    font-size: 3.25em;
+    font-weight: 600;
+    line-height: 1.65;
+    margin: 0 0 1em 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+.header-content div p {
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}

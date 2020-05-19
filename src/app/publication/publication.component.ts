@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicationService } from '../service/publication.service';
+import { of, concat } from 'rxjs';
 
 @Component({
   selector: 'app-publication',
@@ -8,27 +9,36 @@ import { PublicationService } from '../service/publication.service';
 })
 export class PublicationComponent implements OnInit {
 
-  publication: [];
+  publication: any;
   author: [];
+  publiList: [];
 
   constructor(private publicationService: PublicationService) { }
 
   ngOnInit() {
-    this.list();
-    this.authorList();
+    this.publications();
   }
 
   list(){
     this.publicationService.getPublication().subscribe((data: [])=>{
-      this.publication = data;
-    })
+      this.publication = data.concat(this.author);
+    });
+
   }
 
   authorList(){
     this.publicationService.getAuthor().subscribe((data: [])=>{
       this.author = data;
-      console.log(this.author);
     })
+  }
+
+  publications(){
+    concat(
+      this.publication,
+      this.author
+    ).subscribe(
+      (itens: [])=> this.publiList = itens);
+      console.log(this.publiList);
   }
 
 }
